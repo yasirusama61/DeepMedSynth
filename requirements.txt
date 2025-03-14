@@ -1,0 +1,29 @@
+# Core Libraries
+numpy
+pandas
+matplotlib
+opencv-python
+
+# Deep Learning Frameworks
+torch
+torchvision
+tensorflow  # If using TensorFlow-based GANs
+tensorflow-addons  # Additional GAN loss functions
+
+# Image Processing
+Pillow
+scikit-image
+albumentations  # For data augmentation
+
+# Machine Learning & Utilities
+scikit-learn
+tqdm  # Progress bars
+click  # For CLI arguments
+
+# Visualization
+seaborn
+plotly
+tensorboard  # For tracking training metrics
+
+# GPU Acceleration (if using NVIDIA)
+torchsummary  # Model summary
