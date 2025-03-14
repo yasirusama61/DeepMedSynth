@@ -10,14 +10,14 @@ DeepMedSynth is a **GAN-based deep learning project** designed to generate **syn
 ✅ Model training and evaluation with visualization  
 
 ## 📂 Project Structure
-DeepMedSynth/ 
-│── data/ # Training datasets (DO NOT upload real patient data) 
-    │── models/ # Trained GAN models 
-    │── results/ # Generated synthetic images 
-    │── src/ # Python scripts (training, preprocessing, etc.) 
-    │── README.md # Project documentation 
-    │── .gitignore # Ignored files (large datasets, cache, etc.) 
-    │── requirements.txt # Dependencies for the project
+DeepMedSynth/  
+├── data/              # Training datasets (DO NOT upload real patient data)  
+├── models/            # Trained GAN models  
+├── results/           # Generated synthetic images  
+├── src/               # Python scripts (training, preprocessing, etc.)  
+├── README.md          # Project documentation  
+├── .gitignore         # Ignored files (large datasets, cache, etc.)  
+├── requirements.txt   # Dependencies for the project  
 
 
 ## 🔧 Installation
