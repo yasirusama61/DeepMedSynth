@@ -28,7 +28,7 @@ First, **clone** the repository:
 ```bash
     git clone https://github.com/yasirusama61/DeepMedSynth.git
     cd DeepMedSynthaa
-````
+```
 
 ## 🧠 BraTS2020 Dataset
 
@@ -70,5 +70,45 @@ All MRI volumes are preprocessed to:
 You can download the dataset from the official [BraTS 2020 Challenge page](https://www.med.upenn.edu/sbia/brats2020/data.html).
 
 ---
+
+## 🧠 BraTS2020 Preprocessing Pipeline
+
+To prepare the BraTS2020 dataset for deep learning workflows (e.g., GANs, segmentation), we preprocess all MRI modalities into standardized `.npy` tensors.
+
+### ✅ Preprocessing Steps
+
+1. **Dataset Source**  
+   - Located at:  
+     `/kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData/`
+   - Each patient folder (e.g., `BraTS20_Training_001`) contains:
+     - `t1.nii`
+     - `t1ce.nii`
+     - `t2.nii`
+     - `flair.nii`
+     - `seg.nii`
+
+2. **Processing Details**
+   - Each modality is:
+     - Loaded using `nibabel`
+     - Normalized to `[0, 1]` (except segmentation masks)
+     - Resized to a standard shape: **(128, 128, 128)** using `scipy.ndimage.zoom`
+   - Modalities are stacked into a tensor of shape: **(4, 128, 128, 128)**
+   - Segmentation masks are processed separately and saved in the same target shape.
+
+3. **Saved Outputs**
+   - Saved in: `/kaggle/working/deepmedsynth_preprocessed/`
+   - File structure:
+     ```
+     BraTS20_Training_001_image.npy  # Contains T1, T1ce, T2, FLAIR
+     BraTS20_Training_001_mask.npy   # Contains segmentation mask
+     ```
+
+4. **Tools Used**
+   - `nibabel`, `numpy`, `scipy`, `tqdm`, `matplotlib`
+
+---
+
+⚠️ **Note:** This preprocessing ensures uniform volume dimensions and intensity ranges, which is essential for training deep generative models like GANs on 3D medical data.
+
 
 
