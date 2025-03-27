@@ -134,4 +134,12 @@ The following image showcases a single sample from the BraTS2020 dataset after p
 - **FLAIR** – Fluid-attenuated inversion recovery  
 - **Segmentation** – Tumor mask with label classes encoded as pixel values
 
+## 📊 Visualizations
+
+Below is a slice grid of the **FLAIR modality** for a BraTS2020 subject. This grid showcases anatomical and pathological structures across different axial slices.
+
+<p align="center">
+  <img src="assets/sample_flair_grid.png" alt="FLAIR Slice Grid" width="85%">
+</p>
+
 
