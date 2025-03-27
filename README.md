@@ -1,13 +1,23 @@
 # 🏥 DeepMedSynth - Synthetic Medical Image Generator
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
+![License](https://img.shields.io/github/license/yasirusama61/DeepMedSynth?style=flat-square)
+![Issues](https://img.shields.io/github/issues/yasirusama61/DeepMedSynth?color=critical)
+![Stars](https://img.shields.io/github/stars/yasirusama61/DeepMedSynth?style=social)
+![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
+
 DeepMedSynth is a **GAN-based deep learning project** designed to generate **synthetic medical images** (X-rays, MRIs) for research and AI model training. The goal is to enhance dataset availability while ensuring **data privacy and security**.
 
-##  Features
+---
+
+## 🚀 Features
+
 ✅ Generate synthetic **X-ray** and **MRI** images using GANs  
 ✅ Support for **DCGAN, CycleGAN, and StyleGAN** architectures  
 ✅ Open-source and privacy-preserving AI-generated medical images  
 ✅ Preprocessing pipeline for dataset preparation  
-✅ Model training and evaluation with visualization  
+✅ Model training and evaluation with visualization   
 
 ## 📂 Project Structure
 
