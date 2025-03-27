@@ -79,7 +79,7 @@ To prepare the BraTS2020 dataset for deep learning workflows (e.g., GANs, segmen
 
 1. **Dataset Source**  
    - Located at:  
-     `/kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData/`
+     `brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData/`
    - Each patient folder (e.g., `BraTS20_Training_001`) contains:
      - `t1.nii`
      - `t1ce.nii`
@@ -96,7 +96,7 @@ To prepare the BraTS2020 dataset for deep learning workflows (e.g., GANs, segmen
    - Segmentation masks are processed separately and saved in the same target shape.
 
 3. **Saved Outputs**
-   - Saved in: `/kaggle/working/deepmedsynth_preprocessed/`
+   - Saved in: `/deepmedsynth_preprocessed/`
    - File structure:
      ```
      BraTS20_Training_001_image.npy  # Contains T1, T1ce, T2, FLAIR
