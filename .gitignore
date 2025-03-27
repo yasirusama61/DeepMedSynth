@@ -35,8 +35,8 @@ preprocessed/
 *.npy
 
 # Results (generated images, samples)
-results/
-*.png
+# *.png
+# assets/
 
 # VS Code and other editor settings
 .vscode/
