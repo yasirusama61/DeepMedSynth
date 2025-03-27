@@ -10,15 +10,17 @@ DeepMedSynth is a **GAN-based deep learning project** designed to generate **syn
 ✅ Model training and evaluation with visualization  
 
 ## 📂 Project Structure
-DeepMedSynth/  
-├── data/              # Training datasets (DO NOT upload real patient data)  
-├── models/            # Trained GAN models  
-├── results/           # Generated synthetic images  
-├── src/               # Python scripts (training, preprocessing, etc.)  
-├── README.md          # Project documentation  
-├── .gitignore         # Ignored files (large datasets, cache, etc.)  
-├── requirements.txt   # Dependencies for the project  
 
+```plaintext
+DeepMedSynth/
+├── data/              # 🧠 Brain tumor MRI datasets (e.g., BraTS2020)
+├── models/            # 🤖 Trained GAN models (Generator & Discriminator)
+├── results/           # 🖼️ Generated synthetic medical images
+├── src/               # 🧪 Core Python scripts (training, augmentation, preprocessing)
+├── README.md          # 📘 Project overview and usage instructions
+├── .gitignore         # 🚫 Files/folders excluded from version control
+├── requirements.txt   # 📦 Python dependencies and package versions
+```
 
 ## 🔧 Installation
 First, **clone** the repository:
