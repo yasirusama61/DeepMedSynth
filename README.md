@@ -142,4 +142,12 @@ Below is a slice grid of the **FLAIR modality** for a BraTS2020 subject. This gr
   <img src="assets/sample_flair_grid.png" alt="FLAIR Slice Grid" width="85%">
 </p>
 
+### 🧠 Segmentation Overlay
+
+<p align="center">
+  <img src="assets/segmentation_overlay.png" alt="Segmentation Overlay on FLAIR" width="70%">
+</p>
+
+This visualization shows a FLAIR slice overlaid with its corresponding segmentation mask.  
+The tumor region is clearly highlighted, useful for visually validating preprocessing quality.
 
