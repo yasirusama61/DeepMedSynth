@@ -27,3 +27,46 @@ First, **clone** the repository:
     git clone https://github.com/yasirusama61/DeepMedSynth.git
     cd DeepMedSynthaa
 ````
+
+## 🧠 BraTS2020 Dataset
+
+The **Brain Tumor Segmentation (BraTS2020)** dataset is used in this project to train GAN-based models for generating synthetic brain MRI images with tumor labels. It serves as a standard benchmark in the field of medical image synthesis and segmentation.
+
+### 📁 Dataset Location
+```
+   DeepMedSynth/data/BraTS2020/`
+```
+
+### 📦 Contents
+
+Each case contains five volumes:
+
+- `FLAIR`: Fluid Attenuated Inversion Recovery
+- `T1w`: T1-weighted image
+- `T1CE`: Post-contrast T1-weighted image
+- `T2w`: T2-weighted image
+- `seg`: Ground truth segmentation mask
+
+Each volume is in **NIfTI (.nii.gz)** format.
+
+### 🧪 Modalities Shape
+
+All MRI volumes are preprocessed to:
+
+- Shape: **240 × 240 × 155**
+- Aligned to the same anatomical space
+- Intensity-normalized per modality
+
+### 🏷️ Segmentation Mask Labels
+
+- `0`: Background  
+- `1`: Necrotic and Non-Enhancing Tumor Core (NCR/NET)  
+- `2`: Peritumoral Edema (ED)  
+- `4`: Enhancing Tumor (ET)
+
+> ⚠️ **Note**: The dataset is stored locally and not included in this repository due to size and privacy restrictions.  
+You can download the dataset from the official [BraTS 2020 Challenge page](https://www.med.upenn.edu/sbia/brats2020/data.html).
+
+---
+
+
