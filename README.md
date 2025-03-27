@@ -120,5 +120,18 @@ To prepare the BraTS2020 dataset for deep learning workflows (e.g., GANs, segmen
 
 ⚠️ **Note:** This preprocessing ensures uniform volume dimensions and intensity ranges, which is essential for training deep generative models like GANs on 3D medical data.
 
+## 🧪 Sample Visualization of Preprocessed BraTS2020 Data
+
+The following image showcases a single sample from the BraTS2020 dataset after preprocessing (resized to `128×128×128` and normalized). It includes 4 MRI modalities and the corresponding segmentation mask:
+
+<p align="center">
+  <img src="assets/sample_brats_slice.png" alt="BraTS Modalities and Segmentation" width="90%">
+</p>
+
+- **T1** – T1-weighted MRI  
+- **T1CE** – T1-weighted contrast-enhanced MRI  
+- **T2** – T2-weighted MRI  
+- **FLAIR** – Fluid-attenuated inversion recovery  
+- **Segmentation** – Tumor mask with label classes encoded as pixel values
 
 
