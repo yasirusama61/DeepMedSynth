@@ -151,3 +151,24 @@ Below is a slice grid of the **FLAIR modality** for a BraTS2020 subject. This gr
 This visualization shows a FLAIR slice overlaid with its corresponding segmentation mask.  
 The tumor region is clearly highlighted, useful for visually validating preprocessing quality.
 
+## 🧠 Tumor Insights and Visualization
+
+To better understand the spatial structure and characteristics of the BraTS dataset, we include advanced visualizations:
+
+### 🎯 Tumor Location Heatmap
+
+<p align="center">
+  <img src="assets/tumor_location_heatmap.png" alt="Tumor Location Heatmap" width="60%">
+</p>
+
+This heatmap represents the spatial distribution of tumor voxels across all patients. Brighter areas indicate common regions where tumors tend to appear, helping to visualize spatial priors useful for generative models.
+
+---
+
+### 📉 Tumor Area (Voxel Count) per Slice
+
+<p align="center">
+  <img src="assets/tumor_area_slicewise.png" alt="Tumor Area per Slice" width="60%">
+</p>
+
+This plot shows how the tumor volume varies across axial slices for a sample. It helps identify slices with maximum tumor presence, useful for selecting representative slices for 2D GAN training.
