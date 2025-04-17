@@ -187,7 +187,7 @@ We trained a U-Net on preprocessed FLAIR slices to segment tumor regions from th
 
 | FLAIR Slice | Ground Truth | Predicted Mask |
 |-------------|---------------|----------------|
-| ![Overlay Grid](assets/segmentation_overlay_grid.png) |
+| ![Overlay Grid](assets/segmentation_gt_vs_pred.png) |
 
 ### ✅ Ground Truth vs Prediction Overlap
 
