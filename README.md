@@ -179,23 +179,27 @@ This plot shows how the tumor volume varies across axial slices for a sample. It
 
 We trained a U-Net on preprocessed FLAIR slices to segment tumor regions from the BraTS2020 dataset. The model achieved robust performance after 20 epochs using a combined **Dice + BCE loss**.
 
-- 📊 **Mean Dice Score (non-empty slices):** `0.82`
-- 📈 **Loss Function:** Combo Loss (0.5 × Dice + 0.5 × BCE)
-- 🧪 **Evaluation Set:** 300 random FLAIR slices with non-empty ground truth
+- 📊 **Mean Dice Score (non-empty slices):** `0.82`  
+- 📈 **Loss Function:** Combo Loss (0.5 × Dice + 0.5 × BCE)  
+- 🧪 **Evaluation Set:** 300 random FLAIR slices with non-empty ground truth  
+
+---
 
 ### 🔍 Segmentation Overlay Grid
 
-| FLAIR Slice | Ground Truth | Predicted Mask |
-|-------------|---------------|----------------|
-| ![Overlay Grid](assets/segmentation_gt_vs_pred.png) |
+This grid shows input FLAIR slices alongside their corresponding ground truth and predicted masks. Useful for qualitative evaluation of segmentation accuracy.
+
+<p align="center">
+  <img src="assets/segmentation_overlay_grid.png" alt="Segmentation Overlay Grid" width="80%">
+</p>
+
+---
 
 ### ✅ Ground Truth vs Prediction Overlap
 
-This overlay highlights:
-- 🟢 Ground truth only
-- 🔴 Model prediction only
-- 🟡 Correct overlap (true positives)
+This visualization compares ground truth masks (🟢 green), predicted masks (🔴 red), and areas of agreement (🟡 yellow). It gives a pixel-level match/mismatch between model output and true labels.
 
 <p align="center">
-  <img src="assets/segmentation_gt_vs_pred.png" alt="GT vs Prediction Overlay" width="70%">
+  <img src="assets/segmentation_gt_vs_pred.png" alt="Ground Truth vs Prediction Overlap" width="60%">
 </p>
+
