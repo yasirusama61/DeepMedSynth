@@ -172,3 +172,30 @@ This heatmap represents the spatial distribution of tumor voxels across all pati
 </p>
 
 This plot shows how the tumor volume varies across axial slices for a sample. It helps identify slices with maximum tumor presence, useful for selecting representative slices for 2D GAN training.
+
+---
+
+## 🧠 Tumor Segmentation Results (BraTS2020)
+
+We trained a U-Net on preprocessed FLAIR slices to segment tumor regions from the BraTS2020 dataset. The model achieved robust performance after 20 epochs using a combined **Dice + BCE loss**.
+
+- 📊 **Mean Dice Score (non-empty slices):** `0.82`
+- 📈 **Loss Function:** Combo Loss (0.5 × Dice + 0.5 × BCE)
+- 🧪 **Evaluation Set:** 300 random FLAIR slices with non-empty ground truth
+
+### 🔍 Segmentation Overlay Grid
+
+| FLAIR Slice | Ground Truth | Predicted Mask |
+|-------------|---------------|----------------|
+| ![Overlay Grid](assets/segmentation_overlay_grid.png) |
+
+### ✅ Ground Truth vs Prediction Overlap
+
+This overlay highlights:
+- 🟢 Ground truth only
+- 🔴 Model prediction only
+- 🟡 Correct overlap (true positives)
+
+<p align="center">
+  <img src="assets/segmentation_gt_vs_pred.png" alt="GT vs Prediction Overlay" width="70%">
+</p>
