@@ -1,4 +1,4 @@
-# 🏥 DeepMedSynth - Synthetic Medical Image Generator
+# 🏥 DeepMedSynth - Synthetic Medical Image Generator & Segmenter
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
@@ -7,30 +7,38 @@
 ![Stars](https://img.shields.io/github/stars/yasirusama61/DeepMedSynth?style=social)
 ![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
 
-DeepMedSynth is a **GAN-based deep learning project** designed to generate **synthetic medical images** (X-rays, MRIs) for research and AI model training. The goal is to enhance dataset availability while ensuring **data privacy and security**.
+**DeepMedSynth** is an AI research project that combines **GAN-based synthetic image generation** with **U-Net-based segmentation** of brain tumors on MRI. It is designed for medical imaging R&D and serves two key purposes:
+
+- 🧪 **Data Augmentation:** Generate realistic synthetic MRI slices using GANs  
+- 🧠 **Tumor Segmentation:** Train and evaluate segmentation models on real MRI data (BraTS2020)
+
+The project enhances medical dataset availability, privacy-preserving AI research, and visual interpretability for clinical insights.
 
 ---
 
 ## 🚀 Features
 
 ✅ Generate synthetic **X-ray** and **MRI** images using GANs  
-✅ Support for **DCGAN, CycleGAN, and StyleGAN** architectures  
-✅ Open-source and privacy-preserving AI-generated medical images  
-✅ Preprocessing pipeline for dataset preparation  
-✅ Model training and evaluation with visualization   
+✅ Train U-Net models for **tumor segmentation** using BraTS2020 FLAIR images  
+✅ Support for **DCGAN, CycleGAN, and StyleGAN** architectures (in progress)  
+✅ 📈 Visualizations for tumor heatmaps, slice-wise tumor areas, segmentation overlays  
+✅ Fully reproducible **preprocessing, training, and evaluation pipelines**  
+
+---
 
 ## 📂 Project Structure
 
 ```plaintext
 DeepMedSynth/
 ├── data/              # 🧠 Brain tumor MRI datasets (e.g., BraTS2020)
-├── models/            # 🤖 Trained GAN models (Generator & Discriminator)
-├── results/           # 🖼️ Generated synthetic medical images
-├── src/               # 🧪 Core Python scripts (training, augmentation, preprocessing)
+├── models/            # 🤖 Trained GAN & segmentation models (Generator, Discriminator, U-Net)
+├── results/           # 🖼️ Generated synthetic images and segmentation outputs
+├── assets/            # 📊 Visualizations and overlay plots for README
+├── src/               # 🧪 Python scripts (training, augmentation, preprocessing, evaluation)
 ├── README.md          # 📘 Project overview and usage instructions
 ├── .gitignore         # 🚫 Files/folders excluded from version control
 ├── requirements.txt   # 📦 Python dependencies and package versions
-```
+
 
 ## 🔧 Installation
 First, **clone** the repository:
