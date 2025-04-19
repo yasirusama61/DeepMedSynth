@@ -229,3 +229,6 @@ The following plot shows both training and validation **loss** and **accuracy** 
 > - Stronger data augmentation  
 > - Reduced learning rate or weight regularization
 
+- 📊 **Mean Dice Score (non-empty slices):** `0.8668`
+- 📈 **Loss Function:** Combo Loss (0.5 × Dice + 0.5 × BCE)
+- 🧪 **Evaluation Set:** 300 random FLAIR slices with non-empty ground truth
