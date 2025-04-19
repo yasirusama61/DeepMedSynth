@@ -211,3 +211,21 @@ This visualization compares ground truth masks (🟢 green), predicted masks (�
   <img src="assets/segmentation_gt_vs_pred.png" alt="Ground Truth vs Prediction Overlap" width="60%">
 </p>
 
+## 🔁 Extended Training to 100 Epochs
+
+To further evaluate model performance and observe signs of overfitting, we retrained the U-Net for **100 epochs** on FLAIR slices.
+
+### 📈 Combined Training Metrics
+
+The following plot shows both training and validation **loss** and **accuracy** across epochs:
+
+<p align="center">
+  <img src="assets/loss_accuracy_plot.png" alt="Loss and Accuracy Over 100 Epochs" width="75%">
+</p>
+
+> 🔍 **Observation**: Training loss decreased steadily, but validation loss began to increase after ~50 epochs. Similarly, training accuracy continued rising while validation accuracy plateaued.  
+> This divergence indicates **overfitting**, suggesting the need for:
+> - Early stopping  
+> - Stronger data augmentation  
+> - Reduced learning rate or weight regularization
+
