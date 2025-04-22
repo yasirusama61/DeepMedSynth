@@ -27,3 +27,10 @@ tensorboard  # For tracking training metrics
 
 # GPU Acceleration (if using NVIDIA)
 torchsummary  # Model summary
+tensorflow>=2.10
+numpy
+matplotlib
+scikit-learn
+nibabel
+tqdm
+scipy
