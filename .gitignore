@@ -44,3 +44,11 @@ preprocessed/
 
 # Kaggle cache
 /kaggle/working/*
+
+__pycache__/
+*.pyc
+*.ipynb_checkpoints
+*.npy
+*.h5
+*.keras
+segmentation_results/*.png
