@@ -205,7 +205,7 @@ This grid shows input FLAIR slices alongside their corresponding ground truth an
 
 ### ✅ Ground Truth vs Prediction Overlap
 
-This visualization compares ground truth masks (🟢 green), predicted masks (🔴 red), and areas of agreement (🟡 yellow). It gives a pixel-level match/mismatch between model output and true labels.
+This visualization compares ground truth masks, predicted masks (🔴 red). It gives a pixel-level match/mismatch between model output and true labels.
 
 <p align="center">
   <img src="assets/segmentation_gt_vs_pred.png" alt="Ground Truth vs Prediction Overlap" width="60%">
