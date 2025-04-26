@@ -232,3 +232,25 @@ The following plot shows both training and validation **loss** and **accuracy** 
 - 📊 **Mean Dice Score (non-empty slices):** `0.8668`
 - 📈 **Loss Function:** Combo Loss (0.5 × Dice + 0.5 × BCE)
 - 🧪 **Evaluation Set:** 300 random FLAIR slices with non-empty ground truth
+
+## 🧪 Final Training & Evaluation Summary (Early Stopping at Epoch 20)
+
+### 📉 Training Metrics:
+- Train Loss: **~0.425**
+- Validation Loss: **~0.430**
+- Train Dice: **~0.230**
+- Validation Dice: **~0.220**
+
+### 📊 Test Evaluation:
+- **Test Loss:** `0.4307`
+- **Test Dice Coefficient:** `0.2252`
+
+> The model was trained with a U-Net architecture using ComboLoss (Dice + BCE) on Flair modality slices. Training stopped early at epoch 20 due to validation loss stabilization.
+
+### 📈 Visualizations:
+| Plot Type         | Link                                 |
+|------------------|--------------------------------------|
+| Loss Curve        | ![Loss](segmentation_results/loss_plot.png) |
+| Dice Coefficient  | ![Dice](segmentation_results/dice_plot.png) |
+
+---
