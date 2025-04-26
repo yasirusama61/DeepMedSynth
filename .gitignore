@@ -51,4 +51,7 @@ __pycache__/
 *.npy
 *.h5
 *.keras
-segmentation_results/*.png
+segmentation_results/*
+!segmentation_results/*.png
+!segmentation_results/*.csv
+!segmentation_results/*.keras
