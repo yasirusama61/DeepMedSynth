@@ -254,3 +254,27 @@ The following plot shows both training and validation **loss** and **accuracy** 
 | Dice Coefficient  | ![Dice](segmentation_results/dice_plot.png) |
 
 ---
+## 🔍 Comparison: Early Stopped Model vs Full 100-Epoch Training
+
+To visualize the impact of overfitting, we compared two training runs:
+
+| Configuration        | Epochs | Val Loss | Val Dice | Test Dice |
+|----------------------|--------|----------|----------|-----------|
+| ✅ Early Stopped      | 20     | ~0.430   | ~0.22    | **0.2252** |
+| ⚠️ Trained to 100     | 100    | ↑ ~4.0   | ⚠️ Not tracked (accuracy only) | — |
+
+### 🔁 Observations:
+- The early-stopped model **generalized better** despite fewer epochs.
+- The 100-epoch model exhibited classic **overfitting**:
+  - Val loss skyrocketed
+  - Val accuracy fluctuated wildly
+  - Training loss kept improving
+
+### 📊 Comparison Plots
+
+#### ✅ Early Stopped (20 Epochs)
+![Loss](segmentation_results/loss_plot.png)  
+![Dice](segmentation_results/dice_plot.png)
+
+#### ⚠️ Trained Full 100 Epochs
+![Overfit Comparison](assets/loss_accuracy_plot.png)
