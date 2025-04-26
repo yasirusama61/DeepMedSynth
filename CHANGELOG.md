@@ -24,3 +24,19 @@
 - 🔁 **Training Strategy Enhanced**:
   - Added `EarlyStopping` with `patience = 10`
   - Added `ReduceLROnPlateau` to dynamically lower learning rate if validation loss plateaus
+
+
+## 📈 Final Training Results (Early Stopping at Epoch 20)
+
+- ✅ Training automatically stopped after epoch **20** due to plateau in validation loss.
+- 📉 **Final Loss Values**:
+  - Train Loss: ~0.425
+  - Val Loss: ~0.430
+
+- 📈 **Final Dice Coefficient**:
+  - Train Dice: ~0.23
+  - Val Dice: ~0.22
+
+- 📊 Visualizations:
+  ![Loss Plot](segmentation_results/loss_plot.png)
+  ![Dice Plot](segmentation_results/dice_plot.png)
