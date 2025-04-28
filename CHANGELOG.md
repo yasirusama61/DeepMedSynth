@@ -40,3 +40,37 @@
 - 📊 Visualizations:
   ![Loss Plot](segmentation_results/loss_plot.png)
   ![Dice Plot](segmentation_results/dice_plot.png)
+
+# 📝 CHANGELOG
+
+## 📅 [April 25, 2025] - Final Model and Training Strategy Updates
+
+### 🧠 Final Model Architecture Changes
+- ✅ 2D U-Net Backbone (input: 128×128, single-channel Flair slices)
+- ✅ Dropout (rate = 0.2) after each convolutional block to prevent overfitting
+- ✅ Batch Normalization after each convolutional block
+- ✅ Output Activation: Sigmoid for binary mask prediction
+- ✅ Loss Function: ComboLoss (0.5 × Binary Crossentropy + 0.5 × Dice Loss)
+- ✅ Evaluation Metric: Dice Coefficient
+- ✅ Single output channel for whole tumor segmentation
+
+---
+
+### 🛠️ Training Strategy Improvements
+- 🔽 Reduced Batch Size: from 64 → 16
+- 🧪 Data Augmentation via Albumentations:
+  - Horizontal flip
+  - Shift-Scale-Rotate
+  - Random brightness/contrast
+- 🔁 EarlyStopping (patience = 20) on validation loss to prevent overfitting
+- 📉 ReduceLROnPlateau (patience = 5) with LR decay factor 0.5
+- 🔄 Resumed training from checkpoint after early stopping triggered
+- 📈 Completed full training to 100 epochs
+
+---
+
+### 📈 Final Evaluation Metrics
+- **Training Loss**: ~0.425
+- **Validation Loss**: ~0.430
+- **Test Loss**: ~0.4154
+- **Test Dice Coefficient**: ~0.2596
