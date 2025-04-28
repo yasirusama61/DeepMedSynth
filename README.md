@@ -280,3 +280,32 @@ To visualize the impact of overfitting, we compared two training runs:
 
 #### ⚠️ Trained Full 100 Epochs
 ![Overfit Comparison](assets/loss_accuracy_plot.png)
+
+
+# 🧠 DeepMedSynth - Brain Tumor Segmentation (Flair-only)
+
+## 📈 Final Results (100 Epoch Training + EarlyStopping)
+
+- **Train Loss**: ~0.425
+- **Validation Loss**: ~0.430
+- **Test Loss**: ~0.4154
+- **Train Dice**: ~0.245
+- **Validation Dice**: ~0.235
+- **Test Dice**: ~0.2596
+
+## 📊 Visualizations
+
+| Metric             | Plot                                |
+|--------------------|-------------------------------------|
+| Training vs Val Loss | ![Loss](assets/loss_plot.png) |
+| Training vs Val Dice | ![Dice](assets/dice_plot.png) |
+
+---
+
+## 🔍 Notes
+
+- Model trained on **2D Flair slices** only (no T1, T1c, T2 yet).
+- **No strong overfitting** observed across 100 epochs.
+- Future work: Multimodal input, 3D UNet extension, Tversky Loss optimization.
+
+✅
