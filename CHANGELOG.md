@@ -43,7 +43,7 @@
 
 # 📝 CHANGELOG
 
-## 📅 [April 25, 2025] - Final Model and Training Strategy Updates
+## 📅 [April 26, 2025] - Final Model and Training Strategy Updates
 
 ### 🧠 Final Model Architecture Changes
 - ✅ 2D U-Net Backbone (input: 128×128, single-channel Flair slices)
