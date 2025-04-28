@@ -212,3 +212,71 @@ This visualization compares ground truth masks (🟢 green), predicted masks (�
   <img src="assets/segmentation_gt_vs_pred.png" alt="Ground Truth vs Prediction Overlap" width="60%">
 </p>
 
+=======
+## 🔁 Extended Training to 100 Epochs
+
+To further evaluate model performance and observe signs of overfitting, we retrained the U-Net for **100 epochs** on FLAIR slices.
+
+### 📈 Combined Training Metrics
+
+The following plot shows both training and validation **loss** and **accuracy** across epochs:
+
+<p align="center">
+  <img src="assets/loss_accuracy_plot.png" alt="Loss and Accuracy Over 100 Epochs" width="75%">
+</p>
+
+> 🔍 **Observation**: Training loss decreased steadily, but validation loss began to increase after ~50 epochs. Similarly, training accuracy continued rising while validation accuracy plateaued.  
+> This divergence indicates **overfitting**, suggesting the need for:
+> - Early stopping  
+> - Stronger data augmentation  
+> - Reduced learning rate or weight regularization
+
+- 📊 **Mean Dice Score (non-empty slices):** `0.8668`
+- 📈 **Loss Function:** Combo Loss (0.5 × Dice + 0.5 × BCE)
+- 🧪 **Evaluation Set:** 300 random FLAIR slices with non-empty ground truth
+
+## 🧪 Final Training & Evaluation Summary (Early Stopping at Epoch 20)
+
+### 📉 Training Metrics:
+- Train Loss: **~0.425**
+- Validation Loss: **~0.430**
+- Train Dice: **~0.230**
+- Validation Dice: **~0.220**
+
+### 📊 Test Evaluation:
+- **Test Loss:** `0.4307`
+- **Test Dice Coefficient:** `0.2252`
+
+> The model was trained with a U-Net architecture using ComboLoss (Dice + BCE) on Flair modality slices. Training stopped early at epoch 20 due to validation loss stabilization.
+
+### 📈 Visualizations:
+| Plot Type         | Link                                 |
+|------------------|--------------------------------------|
+| Loss Curve        | ![Loss](segmentation_results/loss_plot.png) |
+| Dice Coefficient  | ![Dice](segmentation_results/dice_plot.png) |
+
+---
+## 🔍 Comparison: Early Stopped Model vs Full 100-Epoch Training
+
+To visualize the impact of overfitting, we compared two training runs:
+
+| Configuration        | Epochs | Val Loss | Val Dice | Test Dice |
+|----------------------|--------|----------|----------|-----------|
+| ✅ Early Stopped      | 20     | ~0.430   | ~0.22    | **0.2252** |
+| ⚠️ Trained to 100     | 100    | ↑ ~4.0   | ⚠️ Not tracked (accuracy only) | — |
+
+### 🔁 Observations:
+- The early-stopped model **generalized better** despite fewer epochs.
+- The 100-epoch model exhibited classic **overfitting**:
+  - Val loss skyrocketed
+  - Val accuracy fluctuated wildly
+  - Training loss kept improving
+
+### 📊 Comparison Plots
+
+#### ✅ Early Stopped (20 Epochs)
+![Loss](segmentation_results/loss_plot.png)  
+![Dice](segmentation_results/dice_plot.png)
+
+#### ⚠️ Trained Full 100 Epochs
+![Overfit Comparison](assets/loss_accuracy_plot.png)
