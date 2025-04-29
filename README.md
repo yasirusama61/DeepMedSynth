@@ -54,9 +54,16 @@ cd DeepMedSynth
 The **Brain Tumor Segmentation (BraTS2020)** dataset is used in this project to train GAN-based models for generating synthetic brain MRI images with tumor labels. It serves as a standard benchmark in the field of medical image synthesis and segmentation.
 
 ### 📁 Dataset Location
-```
-   DeepMedSynth/data/BraTS2020/`
-```
+
+Due to size restrictions, the **BraTS2020 dataset is not included** in this repository.
+
+Please download it separately from the [official source](https://www.med.upenn.edu/cbica/brats2020/data.html), and organize it like this:
+
+DeepMedSynth/data/BraTS2020/
+├── MICCAI_BraTS2020_TrainingData/
+├── MICCAI_BraTS2020_ValidationData/
+
+> 🔁 After downloading, you can update the path inside the training scripts if needed.
 
 ### 📦 Contents
 
