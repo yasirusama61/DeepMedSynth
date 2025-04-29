@@ -38,15 +38,15 @@ DeepMedSynth/
 ├── README.md          # 📘 Project overview and usage instructions
 ├── .gitignore         # 🚫 Files/folders excluded from version control
 ├── requirements.txt   # 📦 Python dependencies and package versions
-
+```
 
 ## 🔧 Installation
 
 First, **clone** the repository:
 
 ```bash
-    git clone https://github.com/yasirusama61/DeepMedSynth.git
-    cd DeepMedSynthaa
+git clone https://github.com/yasirusama61/DeepMedSynth.git
+cd DeepMedSynth
 ```
 
 ## 🧠 BraTS2020 Dataset
