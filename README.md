@@ -316,4 +316,39 @@ To visualize the impact of overfitting, we compared two training runs:
 - **No strong overfitting** observed across 100 epochs.
 - Future work: Multimodal input, 3D UNet extension, Tversky Loss optimization.
 
-✅
+## 🧬 Multimodal Segmentation Training (v2)
+
+We extended our original U-Net training pipeline to support **multimodal MRI inputs** using all four BraTS2020 modalities: `T1`, `T1CE`, `T2`, and `FLAIR`.
+
+### ✅ Key Enhancements
+
+- **4-channel input**: Combined all modalities into a (4, 128, 128, 128) tensor per patient.
+- **Improved preprocessing**:
+  - Normalized each modality individually
+  - Resampled to a uniform 128³ shape
+- **Multimodal SliceDataset**:
+  - Extracted spatially aligned slices across modalities
+  - Ensured consistent mask alignment and augmentation
+
+### 🔁 Training Setup
+
+- Optimizer: `Adam`, learning rate `1e-5`
+- Loss Function: `ComboLoss = 0.5 × BCE + 0.5 × Dice`
+- Regularization:
+  - Dropout = 0.2 in each U-Net block
+  - BatchNormalization throughout
+- LR Scheduler: `ReduceLROnPlateau`, which triggered learning rate decay during validation loss plateaus
+
+### 📈 Final Results (Epoch 48)
+
+- **Training Dice**: ~0.5808
+- **Validation Dice**: ~0.4559
+- **Test Dice**: ~0.4494
+- **Test Loss**: ~0.2786
+
+### 📊 Visualizations
+
+| Dice Coefficient Plot | Loss Curve Plot |
+|------------------------|------------------|
+| ![Dice Plot](segmentation_results/dice_plot_multimodal.png) | ![Loss Plot](segmentation_results/loss_plot_multimodal.png) |
+
