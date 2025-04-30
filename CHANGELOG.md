@@ -64,3 +64,12 @@ Architecture and training strategies were finalized in this phase:
 - Validation Loss: ~0.430
 - Test Loss: ~0.4154
 - Test Dice Coefficient: ~0.2596
+
+## 🧠 Training Strategy Highlights
+
+- **ComboLoss (0.5 × BCE + 0.5 × Dice):** Balances pixel-wise error with segmentation overlap.
+- **EarlyStopping:** Prevents overfitting by monitoring validation loss (patience = 10).
+- **ReduceLROnPlateau:** Automatically lowers learning rate when validation loss stagnates.  
+  - LR was reduced from `1e-5` → `5e-6` → `2.5e-6` → `1.25e-6` during training.
+  - Helped escape plateaus and improved final Dice performance.
+- **Batch Size = 16:** Chosen to balance gradient quality and generalization on limited 3D data.
