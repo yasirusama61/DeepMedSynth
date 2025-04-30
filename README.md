@@ -137,6 +137,18 @@ To prepare the BraTS2020 dataset for deep learning workflows (e.g., GANs, segmen
 
 ⚠️ **Note:** This preprocessing ensures uniform volume dimensions and intensity ranges, which is essential for training deep generative models like GANs on 3D medical data.
 
+### ⚠️ Note on Data Integrity
+
+During preprocessing of the BraTS2020 dataset, one sample was skipped due to incomplete modality files:
+
+❌ Missing modality for: BraTS20_Training_355
+
+- Expected all of: `T1`, `T1CE`, `T2`, `FLAIR`, and `seg`.
+- Total available patient directories: **371**
+- Total successfully processed samples: **368**
+
+This is a known issue in the original dataset. The pipeline gracefully skips incomplete cases to avoid corruption during training.
+
 ## 🧪 Sample Visualization of Preprocessed BraTS2020 Data
 
 The following image showcases a single sample from the BraTS2020 dataset after preprocessing (resized to `128×128×128` and normalized). It includes 4 MRI modalities and the corresponding segmentation mask:
