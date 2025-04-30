@@ -141,7 +141,7 @@ To prepare the BraTS2020 dataset for deep learning workflows (e.g., GANs, segmen
 
 During preprocessing of the BraTS2020 dataset, one sample was skipped due to incomplete modality files:
 
-❌ Missing modality for: BraTS20_Training_355
+`❌ Missing modality for: BraTS20_Training_355`
 
 - Expected all of: `T1`, `T1CE`, `T2`, `FLAIR`, and `seg`.
 - Total available patient directories: **371**
