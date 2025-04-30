@@ -73,3 +73,47 @@ Architecture and training strategies were finalized in this phase:
   - LR was reduced from `1e-5` → `5e-6` → `2.5e-6` → `1.25e-6` during training.
   - Helped escape plateaus and improved final Dice performance.
 - **Batch Size = 16:** Chosen to balance gradient quality and generalization on limited 3D data.
+
+# 📝 CHANGELOG
+
+## 📅 [April 30, 2025] - Multimodal Segmentation with 4-Channel U-Net (v2)
+
+### 🔄 Overview
+
+To improve segmentation performance, we introduced a multimodal training pipeline leveraging all four MRI modalities from the BraTS2020 dataset: `T1`, `T1CE`, `T2`, and `FLAIR`. The model now receives richer anatomical information through a 4-channel input configuration.
+
+### 🔧 Architecture Changes
+
+- Input tensor shape: **(4, 128, 128, 128)**
+- Modified `SliceDataset` to align and slice across modalities simultaneously
+- U-Net backbone unchanged, but adapted to accept multi-channel inputs
+- Added:
+  - `Dropout (0.2)` and `BatchNorm` after each convolutional block
+  - `Sigmoid` output activation for binary segmentation
+
+### 🛠️ Training Strategy
+
+- **Loss Function**: ComboLoss (0.5 × BCE + 0.5 × Dice)
+- **Optimizer**: Adam with learning rate = 1e-5
+- **LR Scheduler**: `ReduceLROnPlateau` (patience = 10, factor = 0.5)
+- **Regularization**: Dropout + BatchNorm
+- **EarlyStopping**: Patience = 20 (monitored `val_loss`)
+- Trained for 100 epochs, best performance observed around **epoch 48**
+
+### 📈 Performance Summary
+
+| Metric               | Value    |
+|----------------------|----------|
+| Train Dice           | ~0.5808  |
+| Validation Dice      | ~0.4559  |
+| Test Dice            | ~0.4494  |
+| Test Loss            | ~0.2786  |
+
+### 📊 Visualizations
+
+- ![Loss Curve](segmentation_results/loss_plot_multimodal.png)
+- ![Dice Curve](segmentation_results/dice_plot_multimodal.png)
+
+---
+
+Compared to single-modality training, multimodal fusion led to an increase of over **+0.18 in validation Dice** and visibly more stable learning. Additional experiments can explore attention-based fusion or dual-path networks for further gains.
