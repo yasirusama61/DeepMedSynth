@@ -416,3 +416,15 @@ We extended our original U-Net training pipeline to support **multimodal MRI inp
 
 ![Loss Curve](segmentation_results/loss_plot_multimodal_v2.png)
 ![Dice Curve](segmentation_results/dice_plot_multimodal_v2.png)
+
+## 📝 Test Results (Version 3)
+
+| Metric         | Value   |
+|----------------|---------|
+| Test Dice       | **0.3524**  |
+| Test Loss       | **0.3586**  |
+
+✅ Model evaluated on test set after 75 epochs.
+✅ Dice similar to validation → no major overfitting observed.
+
+🖼️ **Test predictions saved to:** `/kaggle/working/segmentation_results_v2/test_visuals`
