@@ -426,5 +426,3 @@ We extended our original U-Net training pipeline to support **multimodal MRI inp
 
 ✅ Model evaluated on test set after 75 epochs.
 ✅ Dice similar to validation → no major overfitting observed.
-
-🖼️ **Test predictions saved to:** `/kaggle/working/segmentation_results_v2/test_visuals`
