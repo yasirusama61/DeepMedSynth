@@ -364,3 +364,55 @@ We extended our original U-Net training pipeline to support **multimodal MRI inp
 |------------------------|------------------|
 | ![Dice Plot](segmentation_results/dice_plot_multimodal.png) | ![Loss Plot](segmentation_results/loss_plot_multimodal.png) |
 
+## 📝 Segmentation Results Summary (Version 3)
+
+### 🚀 **What we did (v3):**
+- Implemented a **2D U-Net** model for brain tumor segmentation.
+- Used **single-modality input** with 3-channel preprocessed slices.
+- Applied **binary mask binarization** (any label > 0 → foreground).
+- Trained on **128×128 slices** extracted from 3D volumes.
+- Used **Combo Loss** (50% BCE + 50% Dice loss).
+- Added **standard augmentation** (flip, rotate, brightness/contrast).
+- Used **Adam optimizer (lr=1e-5) + ReduceLROnPlateau scheduler**.
+
+---
+
+### 🎯 **What we achieved:**
+
+| Metric          | Value   |
+|----------------|---------|
+| Final Train Dice      | **0.4293**  |
+| Final Val Dice        | **0.3432**  |
+| Final Train Loss      | **0.2913**  |
+| Final Val Loss        | **0.3558**  |
+| Learning Rate         | **1.25e-6** |
+
+✅ Model converged without overfitting.
+✅ Validation loss plateaued; validation Dice stabilized at **~0.34**.
+
+---
+
+### 📊 **Interpretation:**
+
+- Model successfully learned to segment tumor regions **but struggles to reach high overlap (Dice ~0.34 on val).**
+- Validation Dice is **~0.09 lower than training Dice → indicates mild overfitting/generalization gap.**
+
+---
+
+## 📝 **Next Steps (Recommendations):**
+
+- 🔍 **Increase input resolution** → try **256×256** instead of 128×128 to capture more detail.
+- 🔍 **Add test-time augmentation** (horizontal flip, multi-crop inference).
+- 🔍 **Use deeper U-Net variant** (e.g., U-Net++ or ResUNet).
+- 🔍 **Experiment with weighted Dice loss** or **Focal Tversky Loss** for small/irregular tumors.
+- 🔍 **Incorporate multi-modal input** (T1, T2, FLAIR) instead of single channel.
+- 🔍 **Use full 3D U-Net** for volumetric context (if GPU allows).
+- 🔍 **Add validation-time post-processing** (e.g., largest connected component filtering).
+
+---
+
+✅ Current version saved as `segmentation_results_v3`.
+✅ Loss and Dice plots included: `loss_plot.png`, `dice_plot.png`.
+
+![Loss Curve](segmentation_results/loss_plot_multimodal_v2.png)
+![Dice Curve](segmentation_results/dice_plot_multimodal_v2.png)
