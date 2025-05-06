@@ -426,3 +426,11 @@ We extended our original U-Net training pipeline to support **multimodal MRI inp
 
 ✅ Model evaluated on test set after 75 epochs.
 ✅ Dice similar to validation → no major overfitting observed.
+
+
+## 🏎️ TensorRT Acceleration
+
+Added export pipeline for U-Net:
+- PyTorch → ONNX → TensorRT Engine
+- Script: `export_unet_tensorrt.py`
+- TensorRT engine saved as `unet_model.trt` for fast inference
