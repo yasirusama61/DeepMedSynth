@@ -4,6 +4,14 @@ This guide explains how to deploy the DeepMedSynth U-Net segmentation model on e
 
 ---
 
+## 📡 Deployment Architecture Overview
+
+Below is a high-level visualization of how the DeepMedSynth model can be deployed on both NVIDIA Jetson (TensorRT) and Intel Edge (OpenVINO) environments with load balancing:
+
+![Edge Deployment Architecture](../assets/edge_deployment_architecture.png)
+
+---
+
 ## ✅ Deployment Options
 
 ### 1. NVIDIA Jetson Devices (TensorRT)
