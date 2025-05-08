@@ -12,6 +12,13 @@ Below is a high-level visualization of how the DeepMedSynth model can be deploye
 
 ---
 
+## 🧩 Real Deployment Board (Live Setup)
+
+Below is a photo of the live embedded system running DeepMedSynth in real-time, displaying brain tumor segmentation results on the edge device touchscreen:
+
+![Live Inference on Deployment Board](../assets/deployment_board_real_inference.png)
+
+
 ## ✅ Deployment Options
 
 ### 1. NVIDIA Jetson Devices (TensorRT)
