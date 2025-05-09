@@ -2,6 +2,8 @@
 
 This document summarizes real-world inference performance of the DeepMedSynth U-Net model on edge devices using both TensorRT and OpenVINO runtimes.
 
+📁 [Back to Deployment Guide](deployment_on_edge.md)
+
 ---
 
 ## 🏎️ TensorRT (Jetson Xavier NX, FP16)
@@ -50,3 +52,4 @@ This document summarizes real-world inference performance of the DeepMedSynth U-
 ✅ Both platforms support batch inference, low memory, and sub-20ms latency — ideal for real-time medical AI at the edge.
 
 ---
+
