@@ -1,6 +1,6 @@
 # Deployment Guide: DeepMedSynth on Edge Devices
 
-This guide explains how to deploy the DeepMedSynth U-Net segmentation model on edge devices, including Jetson (TensorRT) and Intel-based systems (OpenVINO), with optional support for load balancing.
+This guide explains how to deploy the DeepMedSynth U-Net segmentation model on edge devices, including Jetson (TensorRT) and Intel-based systems (OpenVINO), with optional support for load balancing and MLOps integration.
 
 ---
 
@@ -18,6 +18,7 @@ Below is a photo of the live embedded system running DeepMedSynth in real-time, 
 
 ![Live Inference on Deployment Board](../assets/deployment_board_real_inference.png)
 
+---
 
 ## ✅ Deployment Options
 
@@ -103,6 +104,34 @@ elif client_type == "intel":
 
 ---
 
+## 🔁 MLOps & Automation Integration
+
+To support continuous delivery and reproducibility, the following components are recommended:
+
+### 🔄 Model Versioning
+- Use DVC or MLflow to track model versions
+- Store artifacts: `unet_model.onnx`, `unet_model.trt`, `unet_model.xml`
+
+### 🔍 Monitoring and Logging
+- Use `psutil`, `telegraf`, or `Prometheus` to collect system metrics
+- Use `OpenVINO Performance Profiler` for runtime statistics
+
+### 📦 Dockerized Deployment
+- Containerize the inference service using Docker:
+
+```dockerfile
+FROM openvino/ubuntu20_dev
+COPY unet_model.xml unet_model.bin /models/
+COPY infer_unet_openvino.py /app/
+CMD ["python", "/app/infer_unet_openvino.py"]
+```
+
+### 🧪 CI/CD (Optional)
+- GitHub Actions or GitLab CI to run tests and redeploy when models are updated
+- Auto-export and push new IR/TensorRT engines to edge devices
+
+---
+
 ## 📌 Notes:
 - Ensure inference resolution matches model input (128×128)
 - Enable FP16 precision on Jetson if memory-limited
@@ -110,4 +139,4 @@ elif client_type == "intel":
 
 ---
 
-✅ DeepMedSynth is now ready for production deployment across embedded and edge platforms!
+✅ DeepMedSynth is now ready for production deployment across embedded and edge platforms with full support for hardware acceleration, model monitoring, and scalable service delivery.
