@@ -1,11 +1,24 @@
-# 🏥 DeepMedSynth - Synthetic Medical Image Generator & Segmenter
+# 🧠 DeepMedSynth - Synthetic Medical Image Generator & Segmenter
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
 ![License](https://img.shields.io/github/license/yasirusama61/DeepMedSynth?style=flat-square)
-![Issues](https://img.shields.io/github/issues/yasirusama61/DeepMedSynth?color=critical)
-![Stars](https://img.shields.io/github/stars/yasirusama61/DeepMedSynth?style=social)
-![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
+![Inference](https://img.shields.io/badge/Inference-TensorRT%20%7C%20OpenVINO-blue)
+![F1](https://img.shields.io/badge/F1--Score-0.80-blueviolet)
+
+> Real-time brain tumor segmentation using U-Net on MRI data. Deployed on edge devices with TensorRT and OpenVINO.
+
+---
+
+## ⚡ Highlights
+
+- 🎯 **F1 Score:** 0.8047 | **IoU:** 0.6733
+- 🔬 Combo Loss (BCE + Tversky) on BraTS2020 Flair+T1
+- 🧠 Edge inference: 6.4ms on Jetson (TRT), 19.8ms on CPU (OpenVINO)
+- 🧪 Strong generalization on unseen test data
+- 📈 Includes full plots and evaluation report
+
+---
 
 **DeepMedSynth** is an AI research project that combines **GAN-based synthetic image generation** with **U-Net-based segmentation** of brain tumors on MRI. It is designed for medical imaging R&D and serves two key purposes:
 
@@ -434,3 +447,37 @@ Added export pipeline for U-Net:
 - PyTorch → ONNX → TensorRT Engine
 - Script: `export_unet_tensorrt.py`
 - TensorRT engine saved as `unet_model.trt` for fast inference
+
+
+## 📊 Segmentation Results (DeepMedSynth v4)
+
+**Model:** Deep U-Net  
+**Loss:** Combo (BCE + Tversky)  
+**Data:** BraTS2020 (Flair+T1 slices, binary mask)  
+**Resolution:** 128×128×3  
+**Epochs:** ~58  
+**Augmentation:** Elastic, GridDistortion, Flip, Gamma
+
+---
+
+### 🔍 Test Evaluation Metrics
+
+| Metric     | Score   |
+|------------|---------|
+| Precision  | 0.8595  |
+| Recall     | 0.7565  |
+| F1 Score   | 0.8047  |
+| IoU        | 0.6733  |
+
+---
+
+### 📈 Training Curves
+
+<div align="center">
+  <img src="segmentation_results_v4/loss_plot.png" width="450"/>
+  <img src="segmentation_results_v4/dice_plot.png" width="450"/>
+</div>
+
+---
+
+✅ Model demonstrates strong generalization for binary brain tumor segmentation.
