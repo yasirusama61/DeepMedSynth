@@ -468,6 +468,31 @@ Added export pipeline for U-Net:
 | Recall     | 0.7565  |
 | F1 Score   | 0.8047  |
 | IoU        | 0.6733  |
+| Dice (from IoU) | 0.8047  |
+
+---
+
+### 🧠 What Does Dice = 0.8047 Mean?
+
+- **Dice Coefficient** measures the overlap between predicted and ground truth masks. It ranges from 0 (no overlap) to 1 (perfect match).
+- Our model's Dice score of **0.8047** indicates **good segmentation performance**, meaning:
+  - Tumor shapes are captured accurately
+  - Few false positives and false negatives
+  - The model generalizes well to unseen slices
+
+| Dice Score Range | Interpretation                  |
+|------------------|----------------------------------|
+| > 0.90           | Excellent segmentation           |
+| **0.80–0.89**    | ✅ Good — reliable predictions    |
+| 0.70–0.79        | Fair — could improve with tuning |
+| < 0.70           | Weak — likely underfitting       |
+
+✔️ A Dice of 0.8047 means this U-Net model is clinically useful and suitable for edge inference deployment.|------------|---------|
+| Precision  | 0.8595  |
+| Recall     | 0.7565  |
+| F1 Score   | 0.8047  |
+| IoU        | 0.6733  |
+| Dice (from IoU) | 0.8047  |
 
 ---
 
