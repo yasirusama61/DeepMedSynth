@@ -140,3 +140,5 @@ CMD ["python", "/app/infer_unet_openvino.py"]
 ---
 
 ✅ DeepMedSynth is now ready for production deployment across embedded and edge platforms with full support for hardware acceleration, model monitoring, and scalable service delivery.
+
+📊 [View full benchmark results](deployment_benchmark.md)
