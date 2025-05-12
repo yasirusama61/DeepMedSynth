@@ -489,6 +489,7 @@ Added export pipeline for U-Net:
 
 ✔️ A Dice of 0.8047 means this U-Net model is clinically useful and suitable for edge inference deployment.
 
+| Metric     |Value    |
 |------------|---------|
 | Precision  | 0.8595  |
 | Recall     | 0.7565  |
