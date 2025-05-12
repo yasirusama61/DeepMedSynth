@@ -487,7 +487,9 @@ Added export pipeline for U-Net:
 | 0.70–0.79        | Fair — could improve with tuning |
 | < 0.70           | Weak — likely underfitting       |
 
-✔️ A Dice of 0.8047 means this U-Net model is clinically useful and suitable for edge inference deployment.|------------|---------|
+✔️ A Dice of 0.8047 means this U-Net model is clinically useful and suitable for edge inference deployment.
+
+|------------|---------|
 | Precision  | 0.8595  |
 | Recall     | 0.7565  |
 | F1 Score   | 0.8047  |
